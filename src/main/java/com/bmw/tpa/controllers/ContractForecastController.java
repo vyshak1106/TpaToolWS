@@ -1,5 +1,7 @@
 package com.bmw.tpa.controllers;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -35,8 +37,21 @@ public class ContractForecastController {
 	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/findall")
 	public List<ContractForecast> getContractForecast(){
-		return contractForecastService.getContractForecast();
+		List<ContractForecast> cfcList= new ArrayList<ContractForecast>();
+		ContractForecast cf = new ContractForecast();
+		cf.setApplicationName("Medoc");
+		cf.setApplicationNumber("M-203");
+		cf.setCmdbid("23023");
+		cf.setOperationScope("Global");
+		cf.setMaintenanceScope("With IBM");
+		cf.setValidFrom(new Date());
+		cf.setValidTo(new Date());
+		cf.setPriceBand("1 million");
+		cfcList.add(cf);
+		return cfcList;
+		//return contractForecastService.getContractForecast();
 	}
 	
 	/**
