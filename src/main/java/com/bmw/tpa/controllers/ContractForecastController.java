@@ -40,7 +40,8 @@ public class ContractForecastController {
 	@Path("/findall")
 	public List<ContractForecast> getContractForecast(){
 		List<ContractForecast> cfcList= new ArrayList<ContractForecast>();
-		ContractForecast cf = new ContractForecast();
+		ContractForecast cf;
+		cf = new ContractForecast();
 		cf.setApplicationName("Medoc");
 		cf.setApplicationNumber("M-203");
 		cf.setCmdbid("23023");
@@ -49,6 +50,17 @@ public class ContractForecastController {
 		cf.setValidFrom(new Date());
 		cf.setValidTo(new Date());
 		cf.setPriceBand("1 million");
+		cfcList.add(cf);
+		
+		cf = new ContractForecast();
+		cf.setApplicationName("DRP");
+		cf.setApplicationNumber("M-204");
+		cf.setCmdbid("24563");
+		cf.setOperationScope("Global");
+		cf.setMaintenanceScope("With IBM");
+		cf.setValidFrom(new Date());
+		cf.setValidTo(new Date());
+		cf.setPriceBand("3 million");
 		cfcList.add(cf);
 		return cfcList;
 		//return contractForecastService.getContractForecast();
