@@ -16,6 +16,10 @@ public class Business {
 	
 	private ContractForecast contractForecast;
 
+	public Business() {
+		super();
+	}
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */

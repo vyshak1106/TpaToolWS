@@ -18,6 +18,9 @@ public class ChangeRequest {
 	
 	private ContractForecast contractForecast;
 
+	public ChangeRequest() {
+		super();
+	}
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

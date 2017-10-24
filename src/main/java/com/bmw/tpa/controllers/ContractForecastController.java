@@ -1,9 +1,5 @@
 package com.bmw.tpa.controllers;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -15,7 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.bmw.tpa.model.ContractForecast;
-import com.bmw.tpa.service.interfaces.ContractForecastService;
+import com.bmw.tpa.service.ContractForecastService;
 
 
 /**
@@ -36,34 +32,10 @@ public class ContractForecastController {
 	 * @return the ContractForecasts
 	 */
 	@GET
+	@Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/findall")
-	public List<ContractForecast> getContractForecast(){
-		List<ContractForecast> cfcList= new ArrayList<ContractForecast>();
-		ContractForecast cf;
-		cf = new ContractForecast();
-		cf.setApplicationName("Medoc");
-		cf.setApplicationNumber("M-203");
-		cf.setCmdbid("23023");
-		cf.setOperationScope("Global");
-		cf.setMaintenanceScope("With IBM");
-		cf.setValidFrom(new Date());
-		cf.setValidTo(new Date());
-		cf.setPriceBand("1 million");
-		cfcList.add(cf);
-		
-		cf = new ContractForecast();
-		cf.setApplicationName("DRP");
-		cf.setApplicationNumber("M-204");
-		cf.setCmdbid("24563");
-		cf.setOperationScope("Global");
-		cf.setMaintenanceScope("With IBM");
-		cf.setValidFrom(new Date());
-		cf.setValidTo(new Date());
-		cf.setPriceBand("3 million");
-		cfcList.add(cf);
-		return cfcList;
-		//return contractForecastService.getContractForecast();
+	public ContractForecast getContractForecast(){
+		return contractForecastService.getContractForecast();
 	}
 	
 	/**
@@ -73,8 +45,9 @@ public class ContractForecastController {
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void addNewContractForecast(ContractForecast contractForecast){
-		contractForecastService.createContractForecast(contractForecast);
+	@Produces(MediaType.APPLICATION_JSON)
+	public ContractForecast addNewContractForecast(ContractForecast contractForecast){
+		return contractForecastService.createContractForecast(contractForecast);
 	}
 	
 	/**
@@ -83,9 +56,11 @@ public class ContractForecastController {
 	 * @param ContractForecast the ContractForecast
 	 */
 	@PUT
+	@Path("{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void updateContractForecast(ContractForecast contractForecast){
-		contractForecastService.updateContractForecast(contractForecast);
+	@Produces(MediaType.APPLICATION_JSON)
+	public ContractForecast updateContractForecast(ContractForecast contractForecast){
+		return contractForecastService.updateContractForecast(contractForecast);
 	}
 	
 	/**
@@ -94,6 +69,7 @@ public class ContractForecastController {
 	 * @param ContractForecast the ContractForecast
 	 */
 	@DELETE
+	@Path("{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void deleteContractForecast(ContractForecast contractForecast){
 		contractForecastService.deleteContractForecast(contractForecast);

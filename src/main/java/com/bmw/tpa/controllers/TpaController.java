@@ -16,7 +16,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.bmw.tpa.model.Tpa;
-import com.bmw.tpa.service.interfaces.TpaService;
+import com.bmw.tpa.service.TpaService;
 
 /**
  * The Class TpaController.

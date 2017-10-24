@@ -8,7 +8,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.bmw.tpa.model.Tpa;
-import com.bmw.tpa.service.interfaces.TpaService;
+import com.bmw.tpa.service.TpaService;
 
 /**
  * The Class TpaServiceImpl.
