@@ -1,11 +1,11 @@
 package com.bmw.tpa.dao;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+
+import javax.inject.Inject;
+
+import org.apache.commons.io.IOUtils;
 
 import com.bmw.tpa.common.ConverterJSON;
 import com.bmw.tpa.model.ContractForecast;
@@ -17,14 +17,18 @@ import com.bmw.tpa.model.ContractForecast;
 
 public class AbstractDAO {
 
+	@Inject
+	private RestHeartClient httpClient;
+	private IOUtils ioUtils;
 	
 	
-	//http://localhost:8282/tpatool/contract_forecast
+	
+	
 	public static void main(String[] args) {
+		
+		/*try {
 
-		try {
-
-			URL url = new URL("http://localhost:8282/tpatool/contract_forecast");
+			URL url = new URL("http://localhost:8081/tpa/contractForecast");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Accept", "application/json");
@@ -43,7 +47,7 @@ public class AbstractDAO {
 				System.out.println(output);
 			}
 			
-			ContractForecast con = ConverterJSON.jsonToPOJO(out);
+			ContractForecast con = ConverterJSON.jsonToPOJO(out,ContractForecast.class);
 			System.out.println(con);
 			conn.disconnect();
 
@@ -52,6 +56,17 @@ public class AbstractDAO {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+*/
+		RestHeartClient client = new RestHeartClient();
+		HttpURLConnection conn = client.getConnectionFor("contractForecast");
+		try {
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Accept", "application/json");
+			ContractForecast con = ConverterJSON.jsonToPOJO(IOUtils.toString(conn.getInputStream()),ContractForecast.class);
+			System.out.println(con);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

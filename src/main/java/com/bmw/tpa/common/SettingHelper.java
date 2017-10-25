@@ -22,7 +22,7 @@ public class SettingHelper {
 	static {
 		Properties props = new Properties();
 
-		String propertyFile = System.getProperty("tpa.properties");
+		String propertyFile = System.getProperty("com.bmw.tpa.properties");
 		
 		if (Strings.isNullOrEmpty(propertyFile)) {
 			throw new RuntimeException(ErrorType.CONFIG_LOAD.getMessage());

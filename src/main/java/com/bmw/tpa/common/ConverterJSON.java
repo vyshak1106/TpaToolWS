@@ -31,12 +31,12 @@ public class ConverterJSON {
 
 	}
 
-	public static ContractForecast jsonToPOJO(String json) {
+	public static <T> T jsonToPOJO(String json,Class<T> cls) {
 
 		ObjectMapper mapper = new ObjectMapper();
-		ContractForecast obj = null;
+		T obj = null;
 		try {
-			obj = mapper.readValue(json, ContractForecast.class);
+			obj = mapper.readValue(json, cls);
 
 			System.out.println(obj);
 		} catch (JsonGenerationException e) {
