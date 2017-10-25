@@ -32,13 +32,10 @@ public class ConverterJSON {
 	}
 
 	public static <T> T jsonToPOJO(String json,Class<T> cls) {
-
 		ObjectMapper mapper = new ObjectMapper();
 		T obj = null;
 		try {
 			obj = mapper.readValue(json, cls);
-
-			System.out.println(obj);
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
@@ -47,7 +44,6 @@ public class ConverterJSON {
 			e.printStackTrace();
 		}
 		return obj;
-
 	}
 
 }

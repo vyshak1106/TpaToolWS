@@ -2,6 +2,7 @@ package com.bmw.tpa.model;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -519,6 +520,73 @@ public class ContractForecast {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+    
+    @Override
+	public String toString() {
+		return "ContractForecast [id=" + id + ", applicationNumber=" + applicationNumber + ", applicationName="
+				+ applicationName + ", cmdbid=" + cmdbid + ", operationScope=" + operationScope + ", maintenanceScope="
+				+ maintenanceScope + ", validFrom=" + validFrom + ", validTo=" + validTo + ", priceBand=" + priceBand
+				+ ", serviceLevel=" + serviceLevel + ", leadTimeZone=" + leadTimeZone + ", secondTimeZone="
+				+ secondTimeZone + ", thirdTimeZone=" + thirdTimeZone + ", timeZoneExtendtoSaturday="
+				+ timeZoneExtendtoSaturday + ", publicHolidayRegulation=" + publicHolidayRegulation
+				+ ", extendedServiceMonFri=" + extendedServiceMonFri + ", extendedServiceSat=" + extendedServiceSat
+				+ ", extendedServiceSun=" + extendedServiceSun + ", operationCluster=" + operationCluster
+				+ ", sRNummer=" + sRNummer + ", operationDept=" + operationDept + ", operationGroup=" + operationGroup
+				+ ", operationCost=" + operationCost + ", maintenanceCluster=" + maintenanceCluster
+				+ ", maintenanceDepartment=" + maintenanceDepartment + ", maintenanceGroup=" + maintenanceGroup
+				+ ", maintenanceCost=" + maintenanceCost + ", sourceCode=" + sourceCode + ", privacyPolicy="
+				+ privacyPolicy + ", dVPData=" + dVPData + ", onsiteOperation=" + onsiteOperation
+				+ ", onsiteMaintenance=" + onsiteMaintenance + ", additionalProperties=" + additionalProperties + "]";
+	}
+
+	@JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonPropertyOrder({
+        "$oid"
+    })
+    private class Id {
+
+        @JsonProperty("$oid")
+        private String $oid;
+        @JsonIgnore
+        private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+        /**
+         * No args constructor for use in serialization
+         * 
+         */
+        public Id() {
+        }
+
+        /**
+         * 
+         * @param $oid
+         */
+        public Id(String $oid) {
+            super();
+            this.$oid = $oid;
+        }
+
+        @JsonProperty("$oid")
+        public String get$oid() {
+            return $oid;
+        }
+
+        @JsonProperty("$oid")
+        public void set$oid(String $oid) {
+            this.$oid = $oid;
+        }
+
+        @JsonAnyGetter
+        public Map<String, Object> getAdditionalProperties() {
+            return this.additionalProperties;
+        }
+
+        @JsonAnySetter
+        public void setAdditionalProperty(String name, Object value) {
+            this.additionalProperties.put(name, value);
+        }
+
     }
 
 }
