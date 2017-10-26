@@ -1,5 +1,7 @@
 package com.bmw.tpa.controllers;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -9,6 +11,8 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import org.apache.log4j.Logger;
 
 import com.bmw.tpa.model.ContractForecast;
 import com.bmw.tpa.service.ContractForecastService;
@@ -21,6 +25,8 @@ import com.bmw.tpa.service.ContractForecastService;
  */
 @Path("/contractForecast")
 public class ContractForecastController {
+	
+	private static final Logger LOGGER = Logger.getLogger(ContractForecastController.class);
 	
 	/** The ContractForecast service. */
 	@Inject
@@ -73,6 +79,17 @@ public class ContractForecastController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void deleteContractForecast(ContractForecast contractForecast){
 		contractForecastService.deleteContractForecast(contractForecast);
+	}
+	
+	@GET
+	@Path("/getAll")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<ContractForecast> getAllContractForecasts(){
+		List<ContractForecast> contractForecasts = contractForecastService.getAllContractForecasts();
+		for(ContractForecast con:contractForecasts){
+			LOGGER.info(con);
+		}
+		return contractForecasts;
 	}
 	
 }

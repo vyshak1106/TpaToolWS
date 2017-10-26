@@ -1,6 +1,8 @@
 package com.bmw.tpa.service.impl;
 
-import javax.ejb.Singleton;
+import java.util.List;
+
+import javax.inject.Inject;
 
 import com.bmw.tpa.dao.ContractForecastDAO;
 import com.bmw.tpa.model.ContractForecast;
@@ -10,9 +12,8 @@ import com.bmw.tpa.service.ContractForecastService;
  * @author niraj
  *
  */
-@Singleton
 public class ContractForecastServiceBean implements ContractForecastService {
-	
+	@Inject
 	private ContractForecastDAO contractForecastDAO;
 
 	public ContractForecast getContractForecast() {
@@ -29,6 +30,11 @@ public class ContractForecastServiceBean implements ContractForecastService {
 
 	public void deleteContractForecast(ContractForecast cf) {
 		contractForecastDAO.deleteContractForecast(cf);	
+	}
+
+	@Override
+	public List<ContractForecast> getAllContractForecasts() {
+		return this.contractForecastDAO.getAllContractForecasts();
 	}
 
 }

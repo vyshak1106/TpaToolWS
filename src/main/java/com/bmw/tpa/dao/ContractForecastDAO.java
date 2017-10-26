@@ -3,6 +3,8 @@
  */
 package com.bmw.tpa.dao;
 
+import java.util.List;
+
 import com.bmw.tpa.model.ContractForecast;
 
 /**
@@ -10,6 +12,8 @@ import com.bmw.tpa.model.ContractForecast;
  *
  */
 public interface ContractForecastDAO {
+	
+	List<ContractForecast> getAllContractForecasts();
 
 	ContractForecast getContractForecast();
 

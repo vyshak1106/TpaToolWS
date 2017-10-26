@@ -157,7 +157,6 @@ public class ContractForecast {
      * @param operationCluster
      */
     public ContractForecast(Id id, Integer applicationNumber, String applicationName, String cmdbid, String operationScope, String maintenanceScope, String validFrom, String validTo, String priceBand, String serviceLevel, String leadTimeZone, String secondTimeZone, String thirdTimeZone, String timeZoneExtendtoSaturday, String publicHolidayRegulation, String extendedServiceMonFri, String extendedServiceSat, String extendedServiceSun, String operationCluster, String sRNummer, String operationDept, String operationGroup, Integer operationCost, String maintenanceCluster, String maintenanceDepartment, String maintenanceGroup, Integer maintenanceCost, String sourceCode, String privacyPolicy, String dVPData, String onsiteOperation, String onsiteMaintenance) {
-        super();
         this.id = id;
         this.applicationNumber = applicationNumber;
         this.applicationName = applicationName;
@@ -563,7 +562,6 @@ public class ContractForecast {
          * @param $oid
          */
         public Id(String $oid) {
-            super();
             this.$oid = $oid;
         }
 

@@ -1,5 +1,7 @@
 package com.bmw.tpa.service;
 
+import java.util.List;
+
 import com.bmw.tpa.model.ContractForecast;
 
 /**
@@ -8,6 +10,8 @@ import com.bmw.tpa.model.ContractForecast;
  * @author niraj
  */
 public interface ContractForecastService {
+	
+	List<ContractForecast> getAllContractForecasts();
 	
 	public ContractForecast getContractForecast();
 	
