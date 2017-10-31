@@ -10,35 +10,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "_id", "CR_ID", "CR_Doc", "CR_CoC", "Comment to Changes out of CRs", "SLA start (operations) Date",
-		"End Date Betrieb", "End Date Wartung", "Check Wartung", "Check Betrieb", "CR_Description",
-		"ChangeForecastID" })
+@JsonPropertyOrder({ "_id", "application_number", "change_forecast_id", "cr_id", "cr_doc", "cr_coc", "cr_description" })
 public class ChangeRequest {
 
 	@JsonProperty("_id")
 	private Id id;
-	@JsonProperty("CR_ID")
-	private String cRID;
-	@JsonProperty("CR_Doc")
-	private String cRDoc;
-	@JsonProperty("CR_CoC")
-	private String cRCoC;
-	@JsonProperty("Comment to Changes out of CRs")
-	private String commentToChangesOutOfCRs;
-	@JsonProperty("SLA start (operations) Date")
-	private String sLAStartOperationsDate;
-	@JsonProperty("End Date Betrieb")
-	private String endDateBetrieb;
-	@JsonProperty("End Date Wartung")
-	private String endDateWartung;
-	@JsonProperty("Check Wartung")
-	private String checkWartung;
-	@JsonProperty("Check Betrieb")
-	private String checkBetrieb;
-	@JsonProperty("CR_Description")
-	private String cRDescription;
-	@JsonProperty("ChangeForecastID")
-	private String changeForecastID;
+	@JsonProperty("application_number")
+	private Integer applicationNumber;
+	@JsonProperty("change_forecast_id")
+	private Integer changeForecastId;
+	@JsonProperty("cr_id")
+	private String crId;
+	@JsonProperty("cr_doc")
+	private String crDoc;
+	@JsonProperty("cr_coc")
+	private String crCoc;
+	@JsonProperty("cr_description")
+	private String crDescription;
 	@JsonIgnore
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -52,114 +40,64 @@ public class ChangeRequest {
 		this.id = id;
 	}
 
-	@JsonProperty("CR_ID")
-	public String getCRID() {
-		return cRID;
+	@JsonProperty("application_number")
+	public Integer getApplicationNumber() {
+		return applicationNumber;
 	}
 
-	@JsonProperty("CR_ID")
-	public void setCRID(String cRID) {
-		this.cRID = cRID;
+	@JsonProperty("application_number")
+	public void setApplicationNumber(Integer applicationNumber) {
+		this.applicationNumber = applicationNumber;
 	}
 
-	@JsonProperty("CR_Doc")
-	public String getCRDoc() {
-		return cRDoc;
+	@JsonProperty("change_forecast_id")
+	public Integer getChangeForecastId() {
+		return changeForecastId;
 	}
 
-	@JsonProperty("CR_Doc")
-	public void setCRDoc(String cRDoc) {
-		this.cRDoc = cRDoc;
+	@JsonProperty("change_forecast_id")
+	public void setChangeForecastId(Integer changeForecastId) {
+		this.changeForecastId = changeForecastId;
 	}
 
-	@JsonProperty("CR_CoC")
-	public String getCRCoC() {
-		return cRCoC;
+	@JsonProperty("cr_id")
+	public String getCrId() {
+		return crId;
 	}
 
-	@JsonProperty("CR_CoC")
-	public void setCRCoC(String cRCoC) {
-		this.cRCoC = cRCoC;
+	@JsonProperty("cr_id")
+	public void setCrId(String crId) {
+		this.crId = crId;
 	}
 
-	@JsonProperty("Comment to Changes out of CRs")
-	public String getCommentToChangesOutOfCRs() {
-		return commentToChangesOutOfCRs;
+	@JsonProperty("cr_doc")
+	public String getCrDoc() {
+		return crDoc;
 	}
 
-	@JsonProperty("Comment to Changes out of CRs")
-	public void setCommentToChangesOutOfCRs(String commentToChangesOutOfCRs) {
-		this.commentToChangesOutOfCRs = commentToChangesOutOfCRs;
+	@JsonProperty("cr_doc")
+	public void setCrDoc(String crDoc) {
+		this.crDoc = crDoc;
 	}
 
-	@JsonProperty("SLA start (operations) Date")
-	public String getSLAStartOperationsDate() {
-		return sLAStartOperationsDate;
+	@JsonProperty("cr_coc")
+	public String getCrCoc() {
+		return crCoc;
 	}
 
-	@JsonProperty("SLA start (operations) Date")
-	public void setSLAStartOperationsDate(String sLAStartOperationsDate) {
-		this.sLAStartOperationsDate = sLAStartOperationsDate;
+	@JsonProperty("cr_coc")
+	public void setCrCoc(String crCoc) {
+		this.crCoc = crCoc;
 	}
 
-	@JsonProperty("End Date Betrieb")
-	public String getEndDateBetrieb() {
-		return endDateBetrieb;
+	@JsonProperty("cr_description")
+	public String getCrDescription() {
+		return crDescription;
 	}
 
-	@JsonProperty("End Date Betrieb")
-	public void setEndDateBetrieb(String endDateBetrieb) {
-		this.endDateBetrieb = endDateBetrieb;
-	}
-
-	@JsonProperty("End Date Wartung")
-	public String getEndDateWartung() {
-		return endDateWartung;
-	}
-
-	@JsonProperty("End Date Wartung")
-	public void setEndDateWartung(String endDateWartung) {
-		this.endDateWartung = endDateWartung;
-	}
-
-	@JsonProperty("Check Wartung")
-	public String getCheckWartung() {
-		return checkWartung;
-	}
-
-	@JsonProperty("Check Wartung")
-	public void setCheckWartung(String checkWartung) {
-		this.checkWartung = checkWartung;
-	}
-
-	@JsonProperty("Check Betrieb")
-	public String getCheckBetrieb() {
-		return checkBetrieb;
-	}
-
-	@JsonProperty("Check Betrieb")
-	public void setCheckBetrieb(String checkBetrieb) {
-		this.checkBetrieb = checkBetrieb;
-	}
-
-	@JsonProperty("CR_Description")
-	public String getCRDescription() {
-		return cRDescription;
-	}
-
-	@JsonProperty("CR_Description")
-	public void setCRDescription(String cRDescription) {
-		this.cRDescription = cRDescription;
-	}
-
-	@JsonProperty("ChangeForecastID")
-	public String getChangeForecastID() {
-		return changeForecastID;
-	}
-
-	@JsonProperty("ChangeForecastID")
-	public void setChangeForecastID(String changeForecastID) {
-		this.changeForecastID = changeForecastID;
+	@JsonProperty("cr_description")
+	public void setCrDescription(String crDescription) {
+		this.crDescription = crDescription;
 	}
 
 	@JsonAnyGetter
@@ -172,34 +110,4 @@ public class ChangeRequest {
 		this.additionalProperties.put(name, value);
 	}
 
-	@JsonInclude(JsonInclude.Include.NON_NULL)
-	@JsonPropertyOrder({ "$oid" })
-	private class Id {
-
-		@JsonProperty("$oid")
-		private String $oid;
-		@JsonIgnore
-		private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
-		@JsonProperty("$oid")
-		public String get$oid() {
-			return $oid;
-		}
-
-		@JsonProperty("$oid")
-		public void set$oid(String $oid) {
-			this.$oid = $oid;
-		}
-
-		@JsonAnyGetter
-		public Map<String, Object> getAdditionalProperties() {
-			return this.additionalProperties;
-		}
-
-		@JsonAnySetter
-		public void setAdditionalProperty(String name, Object value) {
-			this.additionalProperties.put(name, value);
-		}
-
-	}
 }

@@ -1,8 +1,8 @@
 package com.bmw.tpa.model;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,580 +11,422 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "_id",
-    "applicationNumber",
-    "applicationName",
-    "cmdbid",
-    "operationScope",
-    "maintenanceScope",
-    "validFrom",
-    "validTo",
-    "priceBand",
-    "serviceLevel",
-    "leadTimeZone",
-    "secondTimeZone",
-    "thirdTimeZone",
-    "timeZoneExtendtoSaturday",
-    "publicHolidayRegulation",
-    "extendedServiceMonFri",
-    "extendedServiceSat",
-    "extendedServiceSun",
-    "operationCluster",
-    "sRNummer",
-    "operationDept",
-    "operationGroup",
-    "operationCost",
-    "maintenanceCluster",
-    "maintenanceDepartment",
-    "maintenanceGroup",
-    "maintenanceCost",
-    "sourceCode",
-    "privacyPolicy",
-    "DVPData",
-    "onsiteOperation",
-    "onsiteMaintenance"
-})
+@JsonPropertyOrder({ "_id", "change_forecast_id", "application_number", "application_name", "cmddb_id",
+		"operation_scope", "maintenance_scope", "valid_from", "valid_to", "price_band", "service_level",
+		"lead_timezone", "timeZone_extendToSaturday", "public_holidayRegulation", "extended_service_monFri",
+		"extended_service_sat", "extended_service_sun", "operation_cluster", "sr_number", "operation_dept",
+		"operation_group", "operation_cost", "maintenance_cluster", "maintenance_department", "maintenance_group",
+		"maintenance_cost", "source_code", "privacy_policy", "dvp_data", "onsite_operation", "onsite_maintenance",
+		"business", "kt_and_others" })
 public class ContractForecast {
 
-    @JsonProperty("_id")
-    private Id id;
-    @JsonProperty("applicationNumber")
-    private Integer applicationNumber;
-    @JsonProperty("applicationName")
-    private String applicationName;
-    @JsonProperty("cmdbid")
-    private String cmdbid;
-    @JsonProperty("operationScope")
-    private String operationScope;
-    @JsonProperty("maintenanceScope")
-    private String maintenanceScope;
-    @JsonProperty("validFrom")
-    private String validFrom;
-    @JsonProperty("validTo")
-    private String validTo;
-    @JsonProperty("priceBand")
-    private String priceBand;
-    @JsonProperty("serviceLevel")
-    private String serviceLevel;
-    @JsonProperty("leadTimeZone")
-    private String leadTimeZone;
-    @JsonProperty("secondTimeZone")
-    private String secondTimeZone;
-    @JsonProperty("thirdTimeZone")
-    private String thirdTimeZone;
-    @JsonProperty("timeZoneExtendtoSaturday")
-    private String timeZoneExtendtoSaturday;
-    @JsonProperty("publicHolidayRegulation")
-    private String publicHolidayRegulation;
-    @JsonProperty("extendedServiceMonFri")
-    private String extendedServiceMonFri;
-    @JsonProperty("extendedServiceSat")
-    private String extendedServiceSat;
-    @JsonProperty("extendedServiceSun")
-    private String extendedServiceSun;
-    @JsonProperty("operationCluster")
-    private String operationCluster;
-    @JsonProperty("sRNummer")
-    private String sRNummer;
-    @JsonProperty("operationDept")
-    private String operationDept;
-    @JsonProperty("operationGroup")
-    private String operationGroup;
-    @JsonProperty("operationCost")
-    private Integer operationCost;
-    @JsonProperty("maintenanceCluster")
-    private String maintenanceCluster;
-    @JsonProperty("maintenanceDepartment")
-    private String maintenanceDepartment;
-    @JsonProperty("maintenanceGroup")
-    private String maintenanceGroup;
-    @JsonProperty("maintenanceCost")
-    private Integer maintenanceCost;
-    @JsonProperty("sourceCode")
-    private String sourceCode;
-    @JsonProperty("privacyPolicy")
-    private String privacyPolicy;
-    @JsonProperty("DVPData")
-    private String dVPData;
-    @JsonProperty("onsiteOperation")
-    private String onsiteOperation;
-    @JsonProperty("onsiteMaintenance")
-    private String onsiteMaintenance;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public ContractForecast() {
-    }
-
-    /**
-     * 
-     * @param privacyPolicy
-     * @param sourceCode
-     * @param extendedServiceSun
-     * @param priceBand
-     * @param serviceLevel
-     * @param operationGroup
-     * @param maintenanceCluster
-     * @param maintenanceGroup
-     * @param validTo
-     * @param maintenanceScope
-     * @param id
-     * @param secondTimeZone
-     * @param timeZoneExtendtoSaturday
-     * @param applicationNumber
-     * @param extendedServiceSat
-     * @param operationScope
-     * @param maintenanceDepartment
-     * @param onsiteOperation
-     * @param leadTimeZone
-     * @param operationCost
-     * @param thirdTimeZone
-     * @param applicationName
-     * @param extendedServiceMonFri
-     * @param sRNummer
-     * @param maintenanceCost
-     * @param publicHolidayRegulation
-     * @param cmdbid
-     * @param validFrom
-     * @param dVPData
-     * @param onsiteMaintenance
-     * @param operationDept
-     * @param operationCluster
-     */
-    public ContractForecast(Id id, Integer applicationNumber, String applicationName, String cmdbid, String operationScope, String maintenanceScope, String validFrom, String validTo, String priceBand, String serviceLevel, String leadTimeZone, String secondTimeZone, String thirdTimeZone, String timeZoneExtendtoSaturday, String publicHolidayRegulation, String extendedServiceMonFri, String extendedServiceSat, String extendedServiceSun, String operationCluster, String sRNummer, String operationDept, String operationGroup, Integer operationCost, String maintenanceCluster, String maintenanceDepartment, String maintenanceGroup, Integer maintenanceCost, String sourceCode, String privacyPolicy, String dVPData, String onsiteOperation, String onsiteMaintenance) {
-        this.id = id;
-        this.applicationNumber = applicationNumber;
-        this.applicationName = applicationName;
-        this.cmdbid = cmdbid;
-        this.operationScope = operationScope;
-        this.maintenanceScope = maintenanceScope;
-        this.validFrom = validFrom;
-        this.validTo = validTo;
-        this.priceBand = priceBand;
-        this.serviceLevel = serviceLevel;
-        this.leadTimeZone = leadTimeZone;
-        this.secondTimeZone = secondTimeZone;
-        this.thirdTimeZone = thirdTimeZone;
-        this.timeZoneExtendtoSaturday = timeZoneExtendtoSaturday;
-        this.publicHolidayRegulation = publicHolidayRegulation;
-        this.extendedServiceMonFri = extendedServiceMonFri;
-        this.extendedServiceSat = extendedServiceSat;
-        this.extendedServiceSun = extendedServiceSun;
-        this.operationCluster = operationCluster;
-        this.sRNummer = sRNummer;
-        this.operationDept = operationDept;
-        this.operationGroup = operationGroup;
-        this.operationCost = operationCost;
-        this.maintenanceCluster = maintenanceCluster;
-        this.maintenanceDepartment = maintenanceDepartment;
-        this.maintenanceGroup = maintenanceGroup;
-        this.maintenanceCost = maintenanceCost;
-        this.sourceCode = sourceCode;
-        this.privacyPolicy = privacyPolicy;
-        this.dVPData = dVPData;
-        this.onsiteOperation = onsiteOperation;
-        this.onsiteMaintenance = onsiteMaintenance;
-    }
-
-    @JsonProperty("_id")
-    public Id getId() {
-        return id;
-    }
-
-    @JsonProperty("_id")
-    public void setId(Id id) {
-        this.id = id;
-    }
-
-    @JsonProperty("applicationNumber")
-    public Integer getApplicationNumber() {
-        return applicationNumber;
-    }
-
-    @JsonProperty("applicationNumber")
-    public void setApplicationNumber(Integer applicationNumber) {
-        this.applicationNumber = applicationNumber;
-    }
-
-    @JsonProperty("applicationName")
-    public String getApplicationName() {
-        return applicationName;
-    }
-
-    @JsonProperty("applicationName")
-    public void setApplicationName(String applicationName) {
-        this.applicationName = applicationName;
-    }
-
-    @JsonProperty("cmdbid")
-    public String getCmdbid() {
-        return cmdbid;
-    }
-
-    @JsonProperty("cmdbid")
-    public void setCmdbid(String cmdbid) {
-        this.cmdbid = cmdbid;
-    }
-
-    @JsonProperty("operationScope")
-    public String getOperationScope() {
-        return operationScope;
-    }
-
-    @JsonProperty("operationScope")
-    public void setOperationScope(String operationScope) {
-        this.operationScope = operationScope;
-    }
-
-    @JsonProperty("maintenanceScope")
-    public String getMaintenanceScope() {
-        return maintenanceScope;
-    }
-
-    @JsonProperty("maintenanceScope")
-    public void setMaintenanceScope(String maintenanceScope) {
-        this.maintenanceScope = maintenanceScope;
-    }
-
-    @JsonProperty("validFrom")
-    public String getValidFrom() {
-        return validFrom;
-    }
-
-    @JsonProperty("validFrom")
-    public void setValidFrom(String validFrom) {
-        this.validFrom = validFrom;
-    }
-
-    @JsonProperty("validTo")
-    public String getValidTo() {
-        return validTo;
-    }
-
-    @JsonProperty("validTo")
-    public void setValidTo(String validTo) {
-        this.validTo = validTo;
-    }
-
-    @JsonProperty("priceBand")
-    public String getPriceBand() {
-        return priceBand;
-    }
-
-    @JsonProperty("priceBand")
-    public void setPriceBand(String priceBand) {
-        this.priceBand = priceBand;
-    }
-
-    @JsonProperty("serviceLevel")
-    public String getServiceLevel() {
-        return serviceLevel;
-    }
-
-    @JsonProperty("serviceLevel")
-    public void setServiceLevel(String serviceLevel) {
-        this.serviceLevel = serviceLevel;
-    }
-
-    @JsonProperty("leadTimeZone")
-    public String getLeadTimeZone() {
-        return leadTimeZone;
-    }
-
-    @JsonProperty("leadTimeZone")
-    public void setLeadTimeZone(String leadTimeZone) {
-        this.leadTimeZone = leadTimeZone;
-    }
-
-    @JsonProperty("secondTimeZone")
-    public String getSecondTimeZone() {
-        return secondTimeZone;
-    }
-
-    @JsonProperty("secondTimeZone")
-    public void setSecondTimeZone(String secondTimeZone) {
-        this.secondTimeZone = secondTimeZone;
-    }
-
-    @JsonProperty("thirdTimeZone")
-    public String getThirdTimeZone() {
-        return thirdTimeZone;
-    }
-
-    @JsonProperty("thirdTimeZone")
-    public void setThirdTimeZone(String thirdTimeZone) {
-        this.thirdTimeZone = thirdTimeZone;
-    }
-
-    @JsonProperty("timeZoneExtendtoSaturday")
-    public String getTimeZoneExtendtoSaturday() {
-        return timeZoneExtendtoSaturday;
-    }
-
-    @JsonProperty("timeZoneExtendtoSaturday")
-    public void setTimeZoneExtendtoSaturday(String timeZoneExtendtoSaturday) {
-        this.timeZoneExtendtoSaturday = timeZoneExtendtoSaturday;
-    }
-
-    @JsonProperty("publicHolidayRegulation")
-    public String getPublicHolidayRegulation() {
-        return publicHolidayRegulation;
-    }
-
-    @JsonProperty("publicHolidayRegulation")
-    public void setPublicHolidayRegulation(String publicHolidayRegulation) {
-        this.publicHolidayRegulation = publicHolidayRegulation;
-    }
-
-    @JsonProperty("extendedServiceMonFri")
-    public String getExtendedServiceMonFri() {
-        return extendedServiceMonFri;
-    }
-
-    @JsonProperty("extendedServiceMonFri")
-    public void setExtendedServiceMonFri(String extendedServiceMonFri) {
-        this.extendedServiceMonFri = extendedServiceMonFri;
-    }
-
-    @JsonProperty("extendedServiceSat")
-    public String getExtendedServiceSat() {
-        return extendedServiceSat;
-    }
-
-    @JsonProperty("extendedServiceSat")
-    public void setExtendedServiceSat(String extendedServiceSat) {
-        this.extendedServiceSat = extendedServiceSat;
-    }
-
-    @JsonProperty("extendedServiceSun")
-    public String getExtendedServiceSun() {
-        return extendedServiceSun;
-    }
-
-    @JsonProperty("extendedServiceSun")
-    public void setExtendedServiceSun(String extendedServiceSun) {
-        this.extendedServiceSun = extendedServiceSun;
-    }
-
-    @JsonProperty("operationCluster")
-    public String getOperationCluster() {
-        return operationCluster;
-    }
-
-    @JsonProperty("operationCluster")
-    public void setOperationCluster(String operationCluster) {
-        this.operationCluster = operationCluster;
-    }
-
-    @JsonProperty("sRNummer")
-    public String getSRNummer() {
-        return sRNummer;
-    }
-
-    @JsonProperty("sRNummer")
-    public void setSRNummer(String sRNummer) {
-        this.sRNummer = sRNummer;
-    }
-
-    @JsonProperty("operationDept")
-    public String getOperationDept() {
-        return operationDept;
-    }
-
-    @JsonProperty("operationDept")
-    public void setOperationDept(String operationDept) {
-        this.operationDept = operationDept;
-    }
-
-    @JsonProperty("operationGroup")
-    public String getOperationGroup() {
-        return operationGroup;
-    }
-
-    @JsonProperty("operationGroup")
-    public void setOperationGroup(String operationGroup) {
-        this.operationGroup = operationGroup;
-    }
-
-    @JsonProperty("operationCost")
-    public Integer getOperationCost() {
-        return operationCost;
-    }
-
-    @JsonProperty("operationCost")
-    public void setOperationCost(Integer operationCost) {
-        this.operationCost = operationCost;
-    }
-
-    @JsonProperty("maintenanceCluster")
-    public String getMaintenanceCluster() {
-        return maintenanceCluster;
-    }
-
-    @JsonProperty("maintenanceCluster")
-    public void setMaintenanceCluster(String maintenanceCluster) {
-        this.maintenanceCluster = maintenanceCluster;
-    }
-
-    @JsonProperty("maintenanceDepartment")
-    public String getMaintenanceDepartment() {
-        return maintenanceDepartment;
-    }
-
-    @JsonProperty("maintenanceDepartment")
-    public void setMaintenanceDepartment(String maintenanceDepartment) {
-        this.maintenanceDepartment = maintenanceDepartment;
-    }
-
-    @JsonProperty("maintenanceGroup")
-    public String getMaintenanceGroup() {
-        return maintenanceGroup;
-    }
-
-    @JsonProperty("maintenanceGroup")
-    public void setMaintenanceGroup(String maintenanceGroup) {
-        this.maintenanceGroup = maintenanceGroup;
-    }
-
-    @JsonProperty("maintenanceCost")
-    public Integer getMaintenanceCost() {
-        return maintenanceCost;
-    }
-
-    @JsonProperty("maintenanceCost")
-    public void setMaintenanceCost(Integer maintenanceCost) {
-        this.maintenanceCost = maintenanceCost;
-    }
-
-    @JsonProperty("sourceCode")
-    public String getSourceCode() {
-        return sourceCode;
-    }
-
-    @JsonProperty("sourceCode")
-    public void setSourceCode(String sourceCode) {
-        this.sourceCode = sourceCode;
-    }
-
-    @JsonProperty("privacyPolicy")
-    public String getPrivacyPolicy() {
-        return privacyPolicy;
-    }
-
-    @JsonProperty("privacyPolicy")
-    public void setPrivacyPolicy(String privacyPolicy) {
-        this.privacyPolicy = privacyPolicy;
-    }
-
-    @JsonProperty("DVPData")
-    public String getDVPData() {
-        return dVPData;
-    }
-
-    @JsonProperty("DVPData")
-    public void setDVPData(String dVPData) {
-        this.dVPData = dVPData;
-    }
-
-    @JsonProperty("onsiteOperation")
-    public String getOnsiteOperation() {
-        return onsiteOperation;
-    }
-
-    @JsonProperty("onsiteOperation")
-    public void setOnsiteOperation(String onsiteOperation) {
-        this.onsiteOperation = onsiteOperation;
-    }
-
-    @JsonProperty("onsiteMaintenance")
-    public String getOnsiteMaintenance() {
-        return onsiteMaintenance;
-    }
-
-    @JsonProperty("onsiteMaintenance")
-    public void setOnsiteMaintenance(String onsiteMaintenance) {
-        this.onsiteMaintenance = onsiteMaintenance;
-    }
-
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-    
-    @Override
-	public String toString() {
-		return "ContractForecast [id=" + id + ", applicationNumber=" + applicationNumber + ", applicationName="
-				+ applicationName + ", cmdbid=" + cmdbid + ", operationScope=" + operationScope + ", maintenanceScope="
-				+ maintenanceScope + ", validFrom=" + validFrom + ", validTo=" + validTo + ", priceBand=" + priceBand
-				+ ", serviceLevel=" + serviceLevel + ", leadTimeZone=" + leadTimeZone + ", secondTimeZone="
-				+ secondTimeZone + ", thirdTimeZone=" + thirdTimeZone + ", timeZoneExtendtoSaturday="
-				+ timeZoneExtendtoSaturday + ", publicHolidayRegulation=" + publicHolidayRegulation
-				+ ", extendedServiceMonFri=" + extendedServiceMonFri + ", extendedServiceSat=" + extendedServiceSat
-				+ ", extendedServiceSun=" + extendedServiceSun + ", operationCluster=" + operationCluster
-				+ ", sRNummer=" + sRNummer + ", operationDept=" + operationDept + ", operationGroup=" + operationGroup
-				+ ", operationCost=" + operationCost + ", maintenanceCluster=" + maintenanceCluster
-				+ ", maintenanceDepartment=" + maintenanceDepartment + ", maintenanceGroup=" + maintenanceGroup
-				+ ", maintenanceCost=" + maintenanceCost + ", sourceCode=" + sourceCode + ", privacyPolicy="
-				+ privacyPolicy + ", dVPData=" + dVPData + ", onsiteOperation=" + onsiteOperation
-				+ ", onsiteMaintenance=" + onsiteMaintenance + ", additionalProperties=" + additionalProperties + "]";
+	@JsonProperty("_id")
+	private Id id;
+	@JsonProperty("change_forecast_id")
+	private Integer changeForecastId;
+	@JsonProperty("application_number")
+	private Integer applicationNumber;
+	@JsonProperty("application_name")
+	private String applicationName;
+	@JsonProperty("cmddb_id")
+	private String cmddbId;
+	@JsonProperty("operation_scope")
+	private String operationScope;
+	@JsonProperty("maintenance_scope")
+	private String maintenanceScope;
+	@JsonProperty("valid_from")
+	private String validFrom;
+	@JsonProperty("valid_to")
+	private String validTo;
+	@JsonProperty("price_band")
+	private String priceBand;
+	@JsonProperty("service_level")
+	private String serviceLevel;
+	@JsonProperty("lead_timezone")
+	private String leadTimezone;
+	@JsonProperty("timeZone_extendToSaturday")
+	private String timeZoneExtendToSaturday;
+	@JsonProperty("public_holidayRegulation")
+	private String publicHolidayRegulation;
+	@JsonProperty("extended_service_monFri")
+	private String extendedServiceMonFri;
+	@JsonProperty("extended_service_sat")
+	private String extendedServiceSat;
+	@JsonProperty("extended_service_sun")
+	private String extendedServiceSun;
+	@JsonProperty("operation_cluster")
+	private String operationCluster;
+	@JsonProperty("sr_number")
+	private String srNumber;
+	@JsonProperty("operation_dept")
+	private String operationDept;
+	@JsonProperty("operation_group")
+	private String operationGroup;
+	@JsonProperty("operation_cost")
+	private Integer operationCost;
+	@JsonProperty("maintenance_cluster")
+	private String maintenanceCluster;
+	@JsonProperty("maintenance_department")
+	private String maintenanceDepartment;
+	@JsonProperty("maintenance_group")
+	private String maintenanceGroup;
+	@JsonProperty("maintenance_cost")
+	private Integer maintenanceCost;
+	@JsonProperty("source_code")
+	private String sourceCode;
+	@JsonProperty("privacy_policy")
+	private String privacyPolicy;
+	@JsonProperty("dvp_data")
+	private String dvpData;
+	@JsonProperty("onsite_operation")
+	private String onsiteOperation;
+	@JsonProperty("onsite_maintenance")
+	private String onsiteMaintenance;
+	@JsonProperty("business")
+	private List<Business> business = null;
+	@JsonProperty("kt_and_others")
+	private List<KtAndOther> ktAndOthers = null;
+	@JsonIgnore
+	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+	@JsonProperty("_id")
+	public Id getId() {
+		return id;
 	}
 
-	@JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonPropertyOrder({
-        "$oid"
-    })
-    private class Id {
+	@JsonProperty("_id")
+	public void setId(Id id) {
+		this.id = id;
+	}
 
-        @JsonProperty("$oid")
-        private String $oid;
-        @JsonIgnore
-        private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+	@JsonProperty("change_forecast_id")
+	public Integer getChangeForecastId() {
+		return changeForecastId;
+	}
 
-        /**
-         * No args constructor for use in serialization
-         * 
-         */
-        public Id() {
-        }
+	@JsonProperty("change_forecast_id")
+	public void setChangeForecastId(Integer changeForecastId) {
+		this.changeForecastId = changeForecastId;
+	}
 
-        /**
-         * 
-         * @param $oid
-         */
-        public Id(String $oid) {
-            this.$oid = $oid;
-        }
+	@JsonProperty("application_number")
+	public Integer getApplicationNumber() {
+		return applicationNumber;
+	}
 
-        @JsonProperty("$oid")
-        public String get$oid() {
-            return $oid;
-        }
+	@JsonProperty("application_number")
+	public void setApplicationNumber(Integer applicationNumber) {
+		this.applicationNumber = applicationNumber;
+	}
 
-        @JsonProperty("$oid")
-        public void set$oid(String $oid) {
-            this.$oid = $oid;
-        }
+	@JsonProperty("application_name")
+	public String getApplicationName() {
+		return applicationName;
+	}
 
-        @JsonAnyGetter
-        public Map<String, Object> getAdditionalProperties() {
-            return this.additionalProperties;
-        }
+	@JsonProperty("application_name")
+	public void setApplicationName(String applicationName) {
+		this.applicationName = applicationName;
+	}
 
-        @JsonAnySetter
-        public void setAdditionalProperty(String name, Object value) {
-            this.additionalProperties.put(name, value);
-        }
+	@JsonProperty("cmddb_id")
+	public String getCmddbId() {
+		return cmddbId;
+	}
 
-    }
+	@JsonProperty("cmddb_id")
+	public void setCmddbId(String cmddbId) {
+		this.cmddbId = cmddbId;
+	}
+
+	@JsonProperty("operation_scope")
+	public String getOperationScope() {
+		return operationScope;
+	}
+
+	@JsonProperty("operation_scope")
+	public void setOperationScope(String operationScope) {
+		this.operationScope = operationScope;
+	}
+
+	@JsonProperty("maintenance_scope")
+	public String getMaintenanceScope() {
+		return maintenanceScope;
+	}
+
+	@JsonProperty("maintenance_scope")
+	public void setMaintenanceScope(String maintenanceScope) {
+		this.maintenanceScope = maintenanceScope;
+	}
+
+	@JsonProperty("valid_from")
+	public String getValidFrom() {
+		return validFrom;
+	}
+
+	@JsonProperty("valid_from")
+	public void setValidFrom(String validFrom) {
+		this.validFrom = validFrom;
+	}
+
+	@JsonProperty("valid_to")
+	public String getValidTo() {
+		return validTo;
+	}
+
+	@JsonProperty("valid_to")
+	public void setValidTo(String validTo) {
+		this.validTo = validTo;
+	}
+
+	@JsonProperty("price_band")
+	public String getPriceBand() {
+		return priceBand;
+	}
+
+	@JsonProperty("price_band")
+	public void setPriceBand(String priceBand) {
+		this.priceBand = priceBand;
+	}
+
+	@JsonProperty("service_level")
+	public String getServiceLevel() {
+		return serviceLevel;
+	}
+
+	@JsonProperty("service_level")
+	public void setServiceLevel(String serviceLevel) {
+		this.serviceLevel = serviceLevel;
+	}
+
+	@JsonProperty("lead_timezone")
+	public String getLeadTimezone() {
+		return leadTimezone;
+	}
+
+	@JsonProperty("lead_timezone")
+	public void setLeadTimezone(String leadTimezone) {
+		this.leadTimezone = leadTimezone;
+	}
+
+	@JsonProperty("timeZone_extendToSaturday")
+	public String getTimeZoneExtendToSaturday() {
+		return timeZoneExtendToSaturday;
+	}
+
+	@JsonProperty("timeZone_extendToSaturday")
+	public void setTimeZoneExtendToSaturday(String timeZoneExtendToSaturday) {
+		this.timeZoneExtendToSaturday = timeZoneExtendToSaturday;
+	}
+
+	@JsonProperty("public_holidayRegulation")
+	public String getPublicHolidayRegulation() {
+		return publicHolidayRegulation;
+	}
+
+	@JsonProperty("public_holidayRegulation")
+	public void setPublicHolidayRegulation(String publicHolidayRegulation) {
+		this.publicHolidayRegulation = publicHolidayRegulation;
+	}
+
+	@JsonProperty("extended_service_monFri")
+	public String getExtendedServiceMonFri() {
+		return extendedServiceMonFri;
+	}
+
+	@JsonProperty("extended_service_monFri")
+	public void setExtendedServiceMonFri(String extendedServiceMonFri) {
+		this.extendedServiceMonFri = extendedServiceMonFri;
+	}
+
+	@JsonProperty("extended_service_sat")
+	public String getExtendedServiceSat() {
+		return extendedServiceSat;
+	}
+
+	@JsonProperty("extended_service_sat")
+	public void setExtendedServiceSat(String extendedServiceSat) {
+		this.extendedServiceSat = extendedServiceSat;
+	}
+
+	@JsonProperty("extended_service_sun")
+	public String getExtendedServiceSun() {
+		return extendedServiceSun;
+	}
+
+	@JsonProperty("extended_service_sun")
+	public void setExtendedServiceSun(String extendedServiceSun) {
+		this.extendedServiceSun = extendedServiceSun;
+	}
+
+	@JsonProperty("operation_cluster")
+	public String getOperationCluster() {
+		return operationCluster;
+	}
+
+	@JsonProperty("operation_cluster")
+	public void setOperationCluster(String operationCluster) {
+		this.operationCluster = operationCluster;
+	}
+
+	@JsonProperty("sr_number")
+	public String getSrNumber() {
+		return srNumber;
+	}
+
+	@JsonProperty("sr_number")
+	public void setSrNumber(String srNumber) {
+		this.srNumber = srNumber;
+	}
+
+	@JsonProperty("operation_dept")
+	public String getOperationDept() {
+		return operationDept;
+	}
+
+	@JsonProperty("operation_dept")
+	public void setOperationDept(String operationDept) {
+		this.operationDept = operationDept;
+	}
+
+	@JsonProperty("operation_group")
+	public String getOperationGroup() {
+		return operationGroup;
+	}
+
+	@JsonProperty("operation_group")
+	public void setOperationGroup(String operationGroup) {
+		this.operationGroup = operationGroup;
+	}
+
+	@JsonProperty("operation_cost")
+	public Integer getOperationCost() {
+		return operationCost;
+	}
+
+	@JsonProperty("operation_cost")
+	public void setOperationCost(Integer operationCost) {
+		this.operationCost = operationCost;
+	}
+
+	@JsonProperty("maintenance_cluster")
+	public String getMaintenanceCluster() {
+		return maintenanceCluster;
+	}
+
+	@JsonProperty("maintenance_cluster")
+	public void setMaintenanceCluster(String maintenanceCluster) {
+		this.maintenanceCluster = maintenanceCluster;
+	}
+
+	@JsonProperty("maintenance_department")
+	public String getMaintenanceDepartment() {
+		return maintenanceDepartment;
+	}
+
+	@JsonProperty("maintenance_department")
+	public void setMaintenanceDepartment(String maintenanceDepartment) {
+		this.maintenanceDepartment = maintenanceDepartment;
+	}
+
+	@JsonProperty("maintenance_group")
+	public String getMaintenanceGroup() {
+		return maintenanceGroup;
+	}
+
+	@JsonProperty("maintenance_group")
+	public void setMaintenanceGroup(String maintenanceGroup) {
+		this.maintenanceGroup = maintenanceGroup;
+	}
+
+	@JsonProperty("maintenance_cost")
+	public Integer getMaintenanceCost() {
+		return maintenanceCost;
+	}
+
+	@JsonProperty("maintenance_cost")
+	public void setMaintenanceCost(Integer maintenanceCost) {
+		this.maintenanceCost = maintenanceCost;
+	}
+
+	@JsonProperty("source_code")
+	public String getSourceCode() {
+		return sourceCode;
+	}
+
+	@JsonProperty("source_code")
+	public void setSourceCode(String sourceCode) {
+		this.sourceCode = sourceCode;
+	}
+
+	@JsonProperty("privacy_policy")
+	public String getPrivacyPolicy() {
+		return privacyPolicy;
+	}
+
+	@JsonProperty("privacy_policy")
+	public void setPrivacyPolicy(String privacyPolicy) {
+		this.privacyPolicy = privacyPolicy;
+	}
+
+	@JsonProperty("dvp_data")
+	public String getDvpData() {
+		return dvpData;
+	}
+
+	@JsonProperty("dvp_data")
+	public void setDvpData(String dvpData) {
+		this.dvpData = dvpData;
+	}
+
+	@JsonProperty("onsite_operation")
+	public String getOnsiteOperation() {
+		return onsiteOperation;
+	}
+
+	@JsonProperty("onsite_operation")
+	public void setOnsiteOperation(String onsiteOperation) {
+		this.onsiteOperation = onsiteOperation;
+	}
+
+	@JsonProperty("onsite_maintenance")
+	public String getOnsiteMaintenance() {
+		return onsiteMaintenance;
+	}
+
+	@JsonProperty("onsite_maintenance")
+	public void setOnsiteMaintenance(String onsiteMaintenance) {
+		this.onsiteMaintenance = onsiteMaintenance;
+	}
+
+	@JsonProperty("business")
+	public List<Business> getBusiness() {
+		return business;
+	}
+
+	@JsonProperty("business")
+	public void setBusiness(List<Business> business) {
+		this.business = business;
+	}
+
+	@JsonProperty("kt_and_others")
+	public List<KtAndOther> getKtAndOthers() {
+		return ktAndOthers;
+	}
+
+	@JsonProperty("kt_and_others")
+	public void setKtAndOthers(List<KtAndOther> ktAndOthers) {
+		this.ktAndOthers = ktAndOthers;
+	}
+
+	@JsonAnyGetter
+	public Map<String, Object> getAdditionalProperties() {
+		return this.additionalProperties;
+	}
+
+	@JsonAnySetter
+	public void setAdditionalProperty(String name, Object value) {
+		this.additionalProperties.put(name, value);
+	}
 
 }
