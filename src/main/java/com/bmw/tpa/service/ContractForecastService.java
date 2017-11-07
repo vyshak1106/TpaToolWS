@@ -15,7 +15,7 @@ public interface ContractForecastService {
 	
 	public ContractForecast getContractForecast();
 	
-	public ContractForecast createContractForecast(ContractForecast cf);
+	public void createContractForecast(ContractForecast cf);
 	
 	public ContractForecast updateContractForecast(ContractForecast cf);
 	

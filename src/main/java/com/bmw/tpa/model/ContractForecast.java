@@ -23,65 +23,63 @@ public class ContractForecast {
 	@JsonProperty("_id")
 	private Id id;
 	@JsonProperty("change_forecast_id")
-	private Integer changeForecastId;
+	private Integer change_forecast_id;
 	@JsonProperty("application_number")
-	private Integer applicationNumber;
+	private Integer application_number;
 	@JsonProperty("application_name")
-	private String applicationName;
-	@JsonProperty("cmddb_id")
-	private String cmddbId;
+	private String application_name;
 	@JsonProperty("operation_scope")
-	private String operationScope;
+	private String operation_scope;
 	@JsonProperty("maintenance_scope")
-	private String maintenanceScope;
+	private String maintenance_scope;
 	@JsonProperty("valid_from")
-	private String validFrom;
+	private String valid_from;
 	@JsonProperty("valid_to")
-	private String validTo;
+	private String valid_to;
 	@JsonProperty("price_band")
-	private String priceBand;
+	private String price_band;
 	@JsonProperty("service_level")
-	private String serviceLevel;
+	private String service_level;
 	@JsonProperty("lead_timezone")
-	private String leadTimezone;
+	private String lead_timezone;
 	@JsonProperty("timeZone_extendToSaturday")
-	private String timeZoneExtendToSaturday;
+	private String timeZone_extendToSaturday;
 	@JsonProperty("public_holidayRegulation")
-	private String publicHolidayRegulation;
+	private String public_holidayRegulation;
 	@JsonProperty("extended_service_monFri")
-	private String extendedServiceMonFri;
+	private String extended_service_monFri;
 	@JsonProperty("extended_service_sat")
-	private String extendedServiceSat;
+	private String extended_service_sat;
 	@JsonProperty("extended_service_sun")
-	private String extendedServiceSun;
+	private String extended_service_sun;
 	@JsonProperty("operation_cluster")
-	private String operationCluster;
+	private String operation_cluster;
 	@JsonProperty("sr_number")
-	private String srNumber;
+	private String sr_number;
 	@JsonProperty("operation_dept")
-	private String operationDept;
+	private String operation_dept;
 	@JsonProperty("operation_group")
-	private String operationGroup;
+	private String operation_group;
 	@JsonProperty("operation_cost")
-	private Integer operationCost;
+	private Integer operation_cost;
 	@JsonProperty("maintenance_cluster")
-	private String maintenanceCluster;
+	private String maintenance_cluster;
 	@JsonProperty("maintenance_department")
-	private String maintenanceDepartment;
+	private String maintenance_department;
 	@JsonProperty("maintenance_group")
-	private String maintenanceGroup;
+	private String maintenance_group;
 	@JsonProperty("maintenance_cost")
-	private Integer maintenanceCost;
+	private Integer maintenance_cost;
 	@JsonProperty("source_code")
-	private String sourceCode;
+	private String source_code;
 	@JsonProperty("privacy_policy")
-	private String privacyPolicy;
+	private String privacy_policy;
 	@JsonProperty("dvp_data")
-	private String dvpData;
+	private String dvp_data;
 	@JsonProperty("onsite_operation")
-	private String onsiteOperation;
+	private String onsite_operation;
 	@JsonProperty("onsite_maintenance")
-	private String onsiteMaintenance;
+	private String onsite_maintenance;
 	@JsonProperty("business")
 	private List<Business> business = null;
 	@JsonProperty("kt_and_others")
@@ -98,306 +96,250 @@ public class ContractForecast {
 	public void setId(Id id) {
 		this.id = id;
 	}
-
 	@JsonProperty("change_forecast_id")
-	public Integer getChangeForecastId() {
-		return changeForecastId;
+	public Integer getChange_forecast_id() {
+		return change_forecast_id;
 	}
-
 	@JsonProperty("change_forecast_id")
-	public void setChangeForecastId(Integer changeForecastId) {
-		this.changeForecastId = changeForecastId;
+	public void setChange_forecast_id(Integer change_forecast_id) {
+		this.change_forecast_id = change_forecast_id;
 	}
-
 	@JsonProperty("application_number")
-	public Integer getApplicationNumber() {
-		return applicationNumber;
+	public Integer getApplication_number() {
+		return application_number;
 	}
-
 	@JsonProperty("application_number")
-	public void setApplicationNumber(Integer applicationNumber) {
-		this.applicationNumber = applicationNumber;
+	public void setApplication_number(Integer application_number) {
+		this.application_number = application_number;
 	}
-
 	@JsonProperty("application_name")
-	public String getApplicationName() {
-		return applicationName;
+	public String getApplication_name() {
+		return application_name;
 	}
-
 	@JsonProperty("application_name")
-	public void setApplicationName(String applicationName) {
-		this.applicationName = applicationName;
+	public void setApplication_name(String application_name) {
+		this.application_name = application_name;
 	}
 
 	@JsonProperty("cmddb_id")
-	public String getCmddbId() {
-		return cmddbId;
+	private String cmddb_id;
+	
+	public String getCmddb_id() {
+		return cmddb_id;
 	}
-
 	@JsonProperty("cmddb_id")
-	public void setCmddbId(String cmddbId) {
-		this.cmddbId = cmddbId;
+	public void setCmddb_id(String cmddb_id) {
+		this.cmddb_id = cmddb_id;
 	}
-
 	@JsonProperty("operation_scope")
-	public String getOperationScope() {
-		return operationScope;
+	public String getOperation_scope() {
+		return operation_scope;
 	}
-
 	@JsonProperty("operation_scope")
-	public void setOperationScope(String operationScope) {
-		this.operationScope = operationScope;
+	public void setOperation_scope(String operation_scope) {
+		this.operation_scope = operation_scope;
 	}
-
 	@JsonProperty("maintenance_scope")
-	public String getMaintenanceScope() {
-		return maintenanceScope;
+	public String getMaintenance_scope() {
+		return maintenance_scope;
 	}
-
 	@JsonProperty("maintenance_scope")
-	public void setMaintenanceScope(String maintenanceScope) {
-		this.maintenanceScope = maintenanceScope;
+	public void setMaintenance_scope(String maintenance_scope) {
+		this.maintenance_scope = maintenance_scope;
 	}
-
 	@JsonProperty("valid_from")
-	public String getValidFrom() {
-		return validFrom;
+	public String getValid_from() {
+		return valid_from;
 	}
-
 	@JsonProperty("valid_from")
-	public void setValidFrom(String validFrom) {
-		this.validFrom = validFrom;
+	public void setValid_from(String valid_from) {
+		this.valid_from = valid_from;
 	}
-
 	@JsonProperty("valid_to")
-	public String getValidTo() {
-		return validTo;
+	public String getValid_to() {
+		return valid_to;
 	}
-
 	@JsonProperty("valid_to")
-	public void setValidTo(String validTo) {
-		this.validTo = validTo;
+	public void setValid_to(String valid_to) {
+		this.valid_to = valid_to;
 	}
-
 	@JsonProperty("price_band")
-	public String getPriceBand() {
-		return priceBand;
+	public String getPrice_band() {
+		return price_band;
 	}
-
 	@JsonProperty("price_band")
-	public void setPriceBand(String priceBand) {
-		this.priceBand = priceBand;
+	public void setPrice_band(String price_band) {
+		this.price_band = price_band;
 	}
-
 	@JsonProperty("service_level")
-	public String getServiceLevel() {
-		return serviceLevel;
+	public String getService_level() {
+		return service_level;
 	}
-
 	@JsonProperty("service_level")
-	public void setServiceLevel(String serviceLevel) {
-		this.serviceLevel = serviceLevel;
+	public void setService_level(String service_level) {
+		this.service_level = service_level;
 	}
-
 	@JsonProperty("lead_timezone")
-	public String getLeadTimezone() {
-		return leadTimezone;
+	public String getLead_timezone() {
+		return lead_timezone;
 	}
-
 	@JsonProperty("lead_timezone")
-	public void setLeadTimezone(String leadTimezone) {
-		this.leadTimezone = leadTimezone;
+	public void setLead_timezone(String lead_timezone) {
+		this.lead_timezone = lead_timezone;
 	}
-
 	@JsonProperty("timeZone_extendToSaturday")
-	public String getTimeZoneExtendToSaturday() {
-		return timeZoneExtendToSaturday;
+	public String getTimeZone_extendToSaturday() {
+		return timeZone_extendToSaturday;
 	}
-
 	@JsonProperty("timeZone_extendToSaturday")
-	public void setTimeZoneExtendToSaturday(String timeZoneExtendToSaturday) {
-		this.timeZoneExtendToSaturday = timeZoneExtendToSaturday;
+	public void setTimeZone_extendToSaturday(String timeZone_extendToSaturday) {
+		this.timeZone_extendToSaturday = timeZone_extendToSaturday;
 	}
-
 	@JsonProperty("public_holidayRegulation")
-	public String getPublicHolidayRegulation() {
-		return publicHolidayRegulation;
+	public String getPublic_holidayRegulation() {
+		return public_holidayRegulation;
 	}
-
 	@JsonProperty("public_holidayRegulation")
-	public void setPublicHolidayRegulation(String publicHolidayRegulation) {
-		this.publicHolidayRegulation = publicHolidayRegulation;
+	public void setPublic_holidayRegulation(String public_holidayRegulation) {
+		this.public_holidayRegulation = public_holidayRegulation;
 	}
-
 	@JsonProperty("extended_service_monFri")
-	public String getExtendedServiceMonFri() {
-		return extendedServiceMonFri;
+	public String getExtended_service_monFri() {
+		return extended_service_monFri;
 	}
-
 	@JsonProperty("extended_service_monFri")
-	public void setExtendedServiceMonFri(String extendedServiceMonFri) {
-		this.extendedServiceMonFri = extendedServiceMonFri;
+	public void setExtended_service_monFri(String extended_service_monFri) {
+		this.extended_service_monFri = extended_service_monFri;
 	}
-
 	@JsonProperty("extended_service_sat")
-	public String getExtendedServiceSat() {
-		return extendedServiceSat;
+	public String getExtended_service_sat() {
+		return extended_service_sat;
 	}
-
 	@JsonProperty("extended_service_sat")
-	public void setExtendedServiceSat(String extendedServiceSat) {
-		this.extendedServiceSat = extendedServiceSat;
+	public void setExtended_service_sat(String extended_service_sat) {
+		this.extended_service_sat = extended_service_sat;
 	}
-
 	@JsonProperty("extended_service_sun")
-	public String getExtendedServiceSun() {
-		return extendedServiceSun;
+	public String getExtended_service_sun() {
+		return extended_service_sun;
 	}
-
 	@JsonProperty("extended_service_sun")
-	public void setExtendedServiceSun(String extendedServiceSun) {
-		this.extendedServiceSun = extendedServiceSun;
+	public void setExtended_service_sun(String extended_service_sun) {
+		this.extended_service_sun = extended_service_sun;
 	}
-
 	@JsonProperty("operation_cluster")
-	public String getOperationCluster() {
-		return operationCluster;
+	public String getOperation_cluster() {
+		return operation_cluster;
 	}
-
 	@JsonProperty("operation_cluster")
-	public void setOperationCluster(String operationCluster) {
-		this.operationCluster = operationCluster;
+	public void setOperation_cluster(String operation_cluster) {
+		this.operation_cluster = operation_cluster;
 	}
-
 	@JsonProperty("sr_number")
-	public String getSrNumber() {
-		return srNumber;
+	public String getSr_number() {
+		return sr_number;
 	}
-
 	@JsonProperty("sr_number")
-	public void setSrNumber(String srNumber) {
-		this.srNumber = srNumber;
+	public void setSr_number(String sr_number) {
+		this.sr_number = sr_number;
 	}
-
 	@JsonProperty("operation_dept")
-	public String getOperationDept() {
-		return operationDept;
+	public String getOperation_dept() {
+		return operation_dept;
 	}
-
 	@JsonProperty("operation_dept")
-	public void setOperationDept(String operationDept) {
-		this.operationDept = operationDept;
+	public void setOperation_dept(String operation_dept) {
+		this.operation_dept = operation_dept;
 	}
-
 	@JsonProperty("operation_group")
-	public String getOperationGroup() {
-		return operationGroup;
+	public String getOperation_group() {
+		return operation_group;
 	}
-
 	@JsonProperty("operation_group")
-	public void setOperationGroup(String operationGroup) {
-		this.operationGroup = operationGroup;
+	public void setOperation_group(String operation_group) {
+		this.operation_group = operation_group;
 	}
-
 	@JsonProperty("operation_cost")
-	public Integer getOperationCost() {
-		return operationCost;
+	public Integer getOperation_cost() {
+		return operation_cost;
 	}
-
 	@JsonProperty("operation_cost")
-	public void setOperationCost(Integer operationCost) {
-		this.operationCost = operationCost;
+	public void setOperation_cost(Integer operation_cost) {
+		this.operation_cost = operation_cost;
 	}
-
 	@JsonProperty("maintenance_cluster")
-	public String getMaintenanceCluster() {
-		return maintenanceCluster;
+	public String getMaintenance_cluster() {
+		return maintenance_cluster;
 	}
-
 	@JsonProperty("maintenance_cluster")
-	public void setMaintenanceCluster(String maintenanceCluster) {
-		this.maintenanceCluster = maintenanceCluster;
+	public void setMaintenance_cluster(String maintenance_cluster) {
+		this.maintenance_cluster = maintenance_cluster;
 	}
-
 	@JsonProperty("maintenance_department")
-	public String getMaintenanceDepartment() {
-		return maintenanceDepartment;
+	public String getMaintenance_department() {
+		return maintenance_department;
 	}
-
 	@JsonProperty("maintenance_department")
-	public void setMaintenanceDepartment(String maintenanceDepartment) {
-		this.maintenanceDepartment = maintenanceDepartment;
+	public void setMaintenance_department(String maintenance_department) {
+		this.maintenance_department = maintenance_department;
 	}
-
 	@JsonProperty("maintenance_group")
-	public String getMaintenanceGroup() {
-		return maintenanceGroup;
+	public String getMaintenance_group() {
+		return maintenance_group;
 	}
-
 	@JsonProperty("maintenance_group")
-	public void setMaintenanceGroup(String maintenanceGroup) {
-		this.maintenanceGroup = maintenanceGroup;
+	public void setMaintenance_group(String maintenance_group) {
+		this.maintenance_group = maintenance_group;
 	}
-
 	@JsonProperty("maintenance_cost")
-	public Integer getMaintenanceCost() {
-		return maintenanceCost;
+	public Integer getMaintenance_cost() {
+		return maintenance_cost;
 	}
-
 	@JsonProperty("maintenance_cost")
-	public void setMaintenanceCost(Integer maintenanceCost) {
-		this.maintenanceCost = maintenanceCost;
+	public void setMaintenance_cost(Integer maintenance_cost) {
+		this.maintenance_cost = maintenance_cost;
 	}
-
 	@JsonProperty("source_code")
-	public String getSourceCode() {
-		return sourceCode;
+	public String getSource_code() {
+		return source_code;
 	}
-
 	@JsonProperty("source_code")
-	public void setSourceCode(String sourceCode) {
-		this.sourceCode = sourceCode;
+	public void setSource_code(String source_code) {
+		this.source_code = source_code;
 	}
-
 	@JsonProperty("privacy_policy")
-	public String getPrivacyPolicy() {
-		return privacyPolicy;
+	public String getPrivacy_policy() {
+		return privacy_policy;
 	}
-
 	@JsonProperty("privacy_policy")
-	public void setPrivacyPolicy(String privacyPolicy) {
-		this.privacyPolicy = privacyPolicy;
+	public void setPrivacy_policy(String privacy_policy) {
+		this.privacy_policy = privacy_policy;
 	}
-
 	@JsonProperty("dvp_data")
-	public String getDvpData() {
-		return dvpData;
+	public String getDvp_data() {
+		return dvp_data;
 	}
-
 	@JsonProperty("dvp_data")
-	public void setDvpData(String dvpData) {
-		this.dvpData = dvpData;
+	public void setDvp_data(String dvp_data) {
+		this.dvp_data = dvp_data;
 	}
-
 	@JsonProperty("onsite_operation")
-	public String getOnsiteOperation() {
-		return onsiteOperation;
+	public String getOnsite_operation() {
+		return onsite_operation;
 	}
-
 	@JsonProperty("onsite_operation")
-	public void setOnsiteOperation(String onsiteOperation) {
-		this.onsiteOperation = onsiteOperation;
+	public void setOnsite_operation(String onsite_operation) {
+		this.onsite_operation = onsite_operation;
+	}
+	@JsonProperty("onsite_maintenance")
+	public String getOnsite_maintenance() {
+		return onsite_maintenance;
+	}
+	@JsonProperty("onsite_maintenance")
+	public void setOnsite_maintenance(String onsite_maintenance) {
+		this.onsite_maintenance = onsite_maintenance;
 	}
 
-	@JsonProperty("onsite_maintenance")
-	public String getOnsiteMaintenance() {
-		return onsiteMaintenance;
-	}
-
-	@JsonProperty("onsite_maintenance")
-	public void setOnsiteMaintenance(String onsiteMaintenance) {
-		this.onsiteMaintenance = onsiteMaintenance;
-	}
 
 	@JsonProperty("business")
 	public List<Business> getBusiness() {

@@ -17,7 +17,7 @@ public interface ContractForecastDAO {
 
 	ContractForecast getContractForecast();
 
-	ContractForecast createContractForecast(ContractForecast cf);
+	void createContractForecast(ContractForecast cf);
 
 	ContractForecast updateContractForecast(ContractForecast cf);
 
