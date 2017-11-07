@@ -5,28 +5,26 @@ import java.net.HttpURLConnection;
 
 import javax.inject.Inject;
 
+import org.apache.commons.io.IOUtils;
+
+import com.bmw.tpa.common.ConverterJSON;
+import com.bmw.tpa.model.ContractForecast;
+
 /**
  * @author niraj
  *
  */
 
-abstract public class AbstractDAO {
-	
+public class AbstractDAO {
+
 	@Inject
 	private RestHeartClient httpClient;
-
-	public HttpURLConnection initConnection(String type) throws IOException{
-		return (HttpURLConnection) this.httpClient.getURLFor(type).openConnection();
-	}
-	public void closeConnection(HttpURLConnection conn) throws IOException{
-		conn.getInputStream().close();
-		conn.disconnect();
-	}
+	private IOUtils ioUtils;
 	
 	
 	
 	
-	//public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		/*try {
 
@@ -59,30 +57,16 @@ abstract public class AbstractDAO {
 			e.printStackTrace();
 		}
 */
-		/*RestHeartClient client = new RestHeartClient();
+		RestHeartClient client = new RestHeartClient();
 		HttpURLConnection conn = client.getConnectionFor("contractForecast");
 		try {
 			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Accept", "application/json");
-			ContractForecastResponseWrapper con = jsonConverter.getResponseFromJSON(IOUtils.toString(conn.getInputStream()),ContractForecastResponseWrapper.class);
-			//LOGGER.info(con.getEmbedded());
-			
-			for(ContractForecast contractForecast:con.getEmbedded()){
-			LOGGER.info(contractForecast.getCmdbid());
-			}
+			ContractForecast con = ConverterJSON.jsonToPOJO(IOUtils.toString(conn.getInputStream()),ContractForecast.class);
+			System.out.println(con);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
-	//}
-	/*public static void main(String[] args) {
-		 CloseableHttpAsyncClient client = HttpAsyncClients.createDefault();
-		    client.start();
-		    HttpGet request = new HttpGet("http://www.google.com");
-		     
-		    Future<HttpResponse> future = client.execute(request, null);
-		    HttpResponse response = future.get();
-		    assertThat(response.getStatusLine().getStatusCode(), equalTo(200));
-		    client.close();
-	}*/
+		}
+	}
 }

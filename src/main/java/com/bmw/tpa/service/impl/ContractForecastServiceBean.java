@@ -20,8 +20,8 @@ public class ContractForecastServiceBean implements ContractForecastService {
 		return contractForecastDAO.getContractForecast();
 	}
 
-	public ContractForecast createContractForecast(ContractForecast cf) {
-		return contractForecastDAO.createContractForecast(cf);
+	public void createContractForecast(ContractForecast cf) {
+		contractForecastDAO.createContractForecast(cf);
 	}
 
 	public ContractForecast updateContractForecast(ContractForecast cf) {
