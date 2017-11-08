@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class ContractForecast {
 
 	@JsonProperty("_id")
-	private Id id;
+	private Id _id;
 	@JsonProperty("change_forecast_id")
 	private Integer change_forecast_id;
 	@JsonProperty("application_number")
@@ -86,16 +86,16 @@ public class ContractForecast {
 	private List<KtAndOther> ktAndOthers = null;
 	@JsonIgnore
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
+	
 	@JsonProperty("_id")
-	public Id getId() {
-		return id;
+	public Id get_id() {
+		return _id;
+	}
+	@JsonProperty("_id")
+	public void set_id(Id _id) {
+		this._id = _id;
 	}
 
-	@JsonProperty("_id")
-	public void setId(Id id) {
-		this.id = id;
-	}
 	@JsonProperty("change_forecast_id")
 	public Integer getChange_forecast_id() {
 		return change_forecast_id;

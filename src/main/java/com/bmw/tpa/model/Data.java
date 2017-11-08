@@ -17,7 +17,7 @@ public class Data {
 	@JsonProperty("month")
 	private Integer month;
 	@JsonProperty("value")
-	private Integer value;
+	private Double value;
 	@JsonIgnore
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -32,12 +32,12 @@ public class Data {
 	}
 
 	@JsonProperty("value")
-	public Integer getValue() {
+	public Double getValue() {
 		return value;
 	}
 
 	@JsonProperty("value")
-	public void setValue(Integer value) {
+	public void setValue(Double value) {
 		this.value = value;
 	}
 
