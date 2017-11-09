@@ -18,8 +18,6 @@ public class Data {
 	private Integer month;
 	@JsonProperty("value")
 	private Double value;
-	@JsonIgnore
-	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
 	@JsonProperty("month")
 	public Integer getMonth() {
@@ -39,16 +37,6 @@ public class Data {
 	@JsonProperty("value")
 	public void setValue(Double value) {
 		this.value = value;
-	}
-
-	@JsonAnyGetter
-	public Map<String, Object> getAdditionalProperties() {
-		return this.additionalProperties;
-	}
-
-	@JsonAnySetter
-	public void setAdditionalProperty(String name, Object value) {
-		this.additionalProperties.put(name, value);
 	}
 
 }

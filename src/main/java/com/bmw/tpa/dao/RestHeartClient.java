@@ -25,6 +25,10 @@ public class RestHeartClient {
 	public URL getURLFor(String connectionName){
 		return this.restEndPoints.get(connectionName).getUrl();
 	}
+	public URL getURLFor(String connectionName,String ObjectId){
+		this.restEndPoints.put("contractForecastUpdate",new RestClient("http://localhost:8080/tpa/contractForecast/"+ObjectId));
+		return this.restEndPoints.get(connectionName).getUrl();
+	}
 	
 	public RestHeartClient() {
 		this.restEndPoints.put("contractForecast",new RestClient("http://localhost:8080/tpa/contractForecast"));

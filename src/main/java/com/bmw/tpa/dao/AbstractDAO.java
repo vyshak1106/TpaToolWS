@@ -18,6 +18,12 @@ abstract public class AbstractDAO {
 	public HttpURLConnection initConnection(String type) throws IOException{
 		return (HttpURLConnection) this.httpClient.getURLFor(type).openConnection();
 	}
+	
+	public HttpURLConnection initConnection(String type,String Objectid) throws IOException{
+		return (HttpURLConnection) this.httpClient.getURLFor(type,Objectid).openConnection();
+	}
+	
+	
 	public void closeConnection(HttpURLConnection conn) throws IOException{
 		conn.getInputStream().close();
 		conn.disconnect();
