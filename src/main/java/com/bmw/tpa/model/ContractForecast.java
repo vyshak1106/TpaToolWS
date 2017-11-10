@@ -83,7 +83,8 @@ public class ContractForecast {
 	@JsonProperty("business")
 	private List<Business> business = null;
 	@JsonProperty("kt_and_others")
-	private List<KtAndOther> ktAndOthers = null;
+	private List<KtAndOther> kt_and_others = null;
+
 	@JsonIgnore
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 	
@@ -350,15 +351,13 @@ public class ContractForecast {
 	public void setBusiness(List<Business> business) {
 		this.business = business;
 	}
-
 	@JsonProperty("kt_and_others")
-	public List<KtAndOther> getKtAndOthers() {
-		return ktAndOthers;
+	public List<KtAndOther> getKt_and_others() {
+		return kt_and_others;
 	}
-
 	@JsonProperty("kt_and_others")
-	public void setKtAndOthers(List<KtAndOther> ktAndOthers) {
-		this.ktAndOthers = ktAndOthers;
+	public void setKt_and_others(List<KtAndOther> kt_and_others) {
+		this.kt_and_others = kt_and_others;
 	}
 
 	@JsonAnyGetter
