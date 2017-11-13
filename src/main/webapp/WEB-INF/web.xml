@@ -21,6 +21,14 @@
 		<servlet-name>jersey-serlvet</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
+	<filter>
+       <filter-name>tpaFilter</filter-name>
+       <filter-class>com.bmw.tpa.filter.TpaFilter</filter-class>
+   </filter>
+   <filter-mapping>
+       <filter-name>tpaFilter</filter-name>
+       <url-pattern>/rest/*</url-pattern>
+   </filter-mapping>
 
 
 </web-app>
