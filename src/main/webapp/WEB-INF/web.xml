@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
 	<display-name>Restful Web Application</display-name>
-<!--
+
 	<servlet>
 		<servlet-name>jersey-serlvet</servlet-name>
 		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
@@ -10,37 +10,13 @@
 			<param-name>jersey.config.server.provider.packages</param-name>
 			<param-value>com.bmw.tpa.controllers</param-value>
 		</init-param>
-		<init-param>
-        <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
-        <param-value>true</param-value>
-        </init-param>
 		<load-on-startup>1</load-on-startup>
-	</servlet>
--->
+	</servlet> 
 	
-	<servlet>
-        <servlet-name>JerseyAPI</servlet-name>
-        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>        
-  <init-param>
-            <param-name>com.sun.jersey.config.property.packages</param-name>
-            <param-value>om.bmw.tpa.controllers</param-value>
-        </init-param>
-		<init-param>
-        <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
-        <param-value>true</param-value>
-        </init-param>
-		<load-on-startup>1</load-on-startup>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>JerseyAPI</servlet-name>
-        <url-pattern>/rest/*</url-pattern>
-    </servlet-mapping> 
-	
-	<!--<servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>jersey-serlvet</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
-	</servlet-mapping>-->
+	</servlet-mapping>
 	<filter>
        <filter-name>tpaFilter</filter-name>
        <filter-class>com.bmw.tpa.filter.TpaFilter</filter-class>
